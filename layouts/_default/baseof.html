@@ -51,6 +51,9 @@
 		{{ . | safeHTML }}{{ end }}{{ end }}
 		<script src="{{ "js/story.js" | absURL }}"></script>
 
+		{{ if isset .Site.Params "cookieconsent" }}
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+		{{ end }}
 	</head>
 	<body class="ma0 bg-white {{ with .Section }}section-{{ . }}{{ end }} page-kind-{{ .Kind }} is-page-{{ .IsPage }} {{ with .Site.Params.classes }}{{ range . }} {{ . }}{{ end }}{{ end }}{{ with .Params.classes }}{{ range . }} {{ . }}{{ end }}{{ end }}">
 		{{ block "header" . }}
@@ -141,5 +144,9 @@
 	{{ template "_internal/google_analytics_async.html" . }}
 	{{ with .Site.Params.foot }}{{ range . }}
 	{{ . | safeHTML }}{{ end }}{{ end }}
+
+	{{ if isset .Site.Params "cookieconsent" }}
+	{{ partial "cookieconsent.html" .Site.Params.cookieconsent }}
+	{{ end }}
 	</body>
 </html>
