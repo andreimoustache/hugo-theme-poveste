@@ -4,4 +4,9 @@
 <article class="center bg-white br-3 pv1 ph4 lh-copy f5 nested-links mw7">
 	{{ .Content }}
 </article>
+
+<aside class="center bg-white br-3 pv1 ph4 lh-copy f5 nested-links mw7">
+	{{ template "_internal/disqus.html" . }}
+</aside>
+
 {{ end }}
