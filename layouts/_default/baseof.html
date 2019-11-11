@@ -142,7 +142,11 @@
 			<a class="no-underline near-white" href="https://github.com/xaprb/story"><img class="dib" title="Made with Hugo and Story" alt="Story logo" src="{{ "img/story-logo-white.svg" | absURL }}" style="width: 1.5rem; height: 1.5rem" /></a>
 			</p>
 			<p class="w-50 near-white">
+				{{- if isset .Site.Params "copyright" }}
+				{{ .Site.Params.copyright | safeHTML }}
+				{{- else }}
 				&copy; {{ now.Format "2006" }} {{ with .Site.Params.author }}{{ . }}{{ end }}
+				{{- end }}
 			</p>
 		</footer>
 		{{ end }}
