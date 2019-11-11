@@ -363,6 +363,25 @@ img[src~="3dbook"] {
     border-bottom-style: none !important;
   }
 }
+.metrics {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+.metric {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+.metric dd {
+  padding-top: 0.5em;
+}
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+}
 .hljs {
   display: block;
   color: #333333;
