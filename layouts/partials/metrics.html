@@ -1,0 +1,10 @@
+<section class="metrics">
+{{- with . }}
+{{- range . }}
+    <dl class="metric">
+        <dt>{{ .description }}</dt>
+        <dd class="f2">{{ with . }}{{ .emoji }} {{ end }}{{ .value }}</dd>
+    </dl>
+{{- end }}
+{{- end }}
+</section>
